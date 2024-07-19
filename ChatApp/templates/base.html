@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block title %}{% endblock %}
+        <link
+            rel="stylesheet"
+            href="../static/css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link 
+            href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" 
+            rel="stylesheet">
+    </head>
+    <body>
+        <div class="HOME">
+            <div class="HOME_header">
+                <div class="HOME_header_title">
+                    <p>APLLI NAME</p>
+                </div>
+                <div class="HOME_header_surchbar">
+                    <form>
+                        <ion-icon name="search-sharp"></ion-icon>
+                        <input>
+                    </form>
+                </div>
+            </div>
+            <div class="HOME_main">
+                <div class="HOME_main_sidebar">
+                    {% include 'sidebar.html'%}
+                </div>
+                <div class="HOME_main_content">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        {% block script %}{% endblock %}
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
